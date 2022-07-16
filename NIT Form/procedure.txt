@@ -1,0 +1,39 @@
+req sw's:
+  local system:
+		jdk install 
+			path settings
+		tomcat install (application software - server side sw)	  => 8080 ==> 8181
+			path settings
+		oracle install
+			path settings
+	note: in live environment no need install and no path setting
+
+		      => create folder=> root folder (project/web site)  
+		          => .html files
+		          => .css files
+		          => .js files
+		          => .jsp files
+		          => images
+		   => after comp designing, we have deploy project
+				=> in live environment project should in the form of ".war"/".zip"/".jar"/".tar" format
+				=> in local system any format accepted
+						copying our project into  "tomcat => webapps folder" 
+		   => start tomcat service/start app service (in local system, in live nothing todo)
+
+		   => open browser and type url
+		   in local systems:
+			http://localhost or ip or name:8181/project-name 
+
+		   live:
+			https://www.website or domain.com
+			(index.html or index.jsp) <== home page of project/web site	
+		             1                       2
+			     					web.xml (config file)
+								    3   login.jsp
+
+
+
+		index.html OR index.htm 
+		home.html OR home.htm
+		home.aspx or index.aspx  <== as a home .net tech
+

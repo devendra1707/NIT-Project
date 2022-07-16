@@ -1,0 +1,139 @@
+<!-- enroll.html file (client/UI) -->
+<!DOCTYPE html>
+<html>
+ <head>
+   <style>
+     .err{
+       color:#0000ff;
+       background:#ffff00;
+     }
+     *{
+        margin-top:10px;
+        margin-bottom:10px;
+      }
+   </style>
+ </head>
+<body style="color:#ffff00; font-size:20px;">
+
+<div style="margin-left:300px; background:#0066cc; width:400px; padding-left:15px;">
+  <form id="f1" action="enrollment.jsp" method="post">
+    <h1 id="head1"> <u> Student Details </u> </h1>
+
+	<label>Name</label> <br>
+	<input type="text" id="tna" name="txtName"> <output id="ona" class="err"> </output>
+  	<br>
+	<label>Email Id</label> <br>
+	<input type="text" id="tmid" name="txtMail">  <output id="omid" class="err"> </output>
+  	<br>
+    <label>Mobile</label> <br>
+	<input type="text" id="tmob" name="txtMob"> <output id="omob" class="err"></output>
+	<br>
+    <label>Course</label> <br>
+    <select name='course' style="font-size:16px;">
+      <option value='' selected>Select Course</option>
+      <option value='DATA SCIENCE'>DATA SCIENCE</option>
+      <option value='PYTHON'>PYTHON</option>
+      <option value='DJANGO'>DJANGO</option>
+      <option value='AWS'>AWS</option>
+      <option value='DevOps'>DevOps</option>
+      <option value='MS-AZURE'>MS-AZURE</option>
+      <option value='POWER-BI'>POWER-BI</option>
+      <option value='SalesForce CRM'>SalesForce CRM</option>
+      <option value='HADOOP'>HADOOP</option>
+      <option value='UI Technologies'>UI Technologies</option>
+      <option value='Full Stack with UI'>Full Stack with UI</option>
+      <option value='Angular 8'>Angular 8</option>
+      <option value='Angular JS'>Angular JS</option>
+      <option value='React JS'>React JS</option>
+      <option value='NodeJS'>NodeJS</option>
+      <option value='Mongo DB'>Mongo DB</option>
+      <option value='HTML5 JAVASCRIPT ES6+'>HTML5 JAVASCRIPT ES6+</option>
+      <option value='Complete JAVA'>Complete JAVA</option>
+      <option value='CORE JAVA'>CORE JAVA</option>
+      <option value='ADV.JAVA'>ADV.JAVA</option>
+      <option value='SPRING'>SPRING</option>
+      <option value='HIBERNATE'>HIBERNATE</option>
+      <option value='XML/WebServices'>XML/WebServices</option>
+      <option value='Spring Boot, MicroServices'>Spring Boot, MicroServices</option>
+      <option value='ORACLE'>ORACLE (SQL &amp; PL/SQL)</option>
+      <option value='.NET'>Complete .NET</option>
+      <option value='C#.NET'>C#.NET</option>
+      <option value='ASP.NET'>ASP.NET</option>
+      <option value='SQL SERVER'>SQL SERVER</option>
+      <option value='Asp.Net MVC CORE'>Asp.Net MVC CORE</option>
+      <option value='C'>C Language</option>
+      <option value='C++'>C++</option>
+      <option value='DS through C'>DS through C</option>
+      <option value='SELENIUM'>SELENIUM</option>
+      <option value='RPA'>RPA</option>
+      <option value='Blue Prism'>Blue Prism</option>
+      <option value='Automation Anywhere'>Automation Anywhere</option>
+      <option value='UiPath'>UiPath</option>
+      <option value='PHP with MySQL'>PHP with MySQL</option>
+      <option value='UNIX / LINUX'>UNIX / LINUX</option>
+      <option value='Linux Admin'>Linux Admin</option>
+      <option value='HTML/JavaScript'>HTML/JavaScript</option>
+      <option value='ANDROID'>ANDROID</option>
+      <option value='iPhone (iOS)'>iPhone (iOS)</option>
+      <option value='Digital Marketing'>Digital Marketing</option>
+      <option value='CRT'>CRT (Campus Recruitment Training)</option>
+    </select>
+	<br>
+    <label>Mode of Training</label> <br>
+    <select name='ttype' style="font-size:16px;">
+      <option value='Online Training'>Online Training</option>
+      <option value='Classroom Training'>Classroom Training</option>
+      <option value='Weekend Training'>Weekend Training</option>
+      <option value='Project Training'>Project Training</option>
+      <option value='Internship'>Internship</option>
+    </select>
+    <br>
+    <input id="sb" type="submit" style="background:#00ff33; width:120px; height:30px; font-size:20px; border:none;" value="Submit">
+  </form>  <!-- UI ended -->
+ </div>
+  <script>
+    document.getElementById("f1").addEventListener("submit", checkData );
+
+    function checkData(event)
+	{
+      let sna=document.getElementById("tna").value;
+
+
+
+
+
+
+
+      //checking name with reg-expr with only alphabets
+      var nameexpr=/^[A-Za-z ]*$/; //for name validating
+	  if(nameexpr.test(sna)==false || sna==""){
+         event.preventDefault();
+         document.getElementById("ona").innerHTML="Enter Valid Name";
+      }else{
+		  document.getElementById("ona").innerHTML="";
+	  }
+
+      //checking mailID with reg-expr 
+      let mid=document.getElementById("tmid").value;
+      var mailexpr=/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+	  if(mailexpr.test(mid)==false){
+         event.preventDefault();
+         document.getElementById("omid").innerHTML="Enter Valid MailId";
+      }else{
+		  document.getElementById("omid").innerHTML="";
+	  }
+
+      //checking mobile number with reg-expr 
+      let mob=document.getElementById("tmob").value;
+      var mobexpr=/^[6789]\d{9}$/;
+	  if(mobexpr.test(mob)==false){
+         event.preventDefault();
+         document.getElementById("omob").innerHTML="Enter Valid Mobile Number";
+      }else{
+		  document.getElementById("omob").innerHTML="";
+	  }
+    } //end of fun
+  </script>
+</body>
+</html>
+			
